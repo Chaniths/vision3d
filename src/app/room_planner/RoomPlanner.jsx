@@ -4,7 +4,7 @@ import Image from 'next/image';
 export const RoomPlanner = () => {
     return (
         <div>
-            <h2>Home -- Design your room</h2>
+            <h2>Home ➡️ Design your room</h2>
 
             <div className="text-center">
                 <h2 className="text-2xl font-semibold text-gray-800 mb-4">Room Planner tool</h2>
