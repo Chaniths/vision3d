@@ -1,4 +1,7 @@
+import { RoomPlanner } from "./room_planner/RoomPlanner";
 import Land from "./home/Land";
+
+
 
 export default function Home() {
   return (
@@ -10,6 +13,8 @@ export default function Home() {
         </p>
       </div> */}
       <Land/>
+      {/* <RoomPlanner/> */}
     </>
+
   );
 }
