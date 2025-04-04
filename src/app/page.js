@@ -1,10 +1,19 @@
-import React from 'react';
-import { About } from '@/About/about.jsx'; 
-export default function HomePage() {
+import { RoomPlanner } from "./room_planner/RoomPlanner";
+
+
+
+export default function Home() {
   return (
-    <main>
-      <h1>Welcome to Vision 3D</h1>
-      <About />
-    </main>
+    <>
+      {/* <div className="flex flex-col items-center justify-center min-h-screen bg-[#0A1930] text-white">
+        <h1 className="text-4xl font-bold mb-4">Welcome</h1>
+        <p className="text-lg">
+          Empowering Architects with Cutting-Edge Solutions
+        </p>
+      </div> */}
+      {/* <Land/> */}
+      <RoomPlanner></RoomPlanner>
+    </>
+
   );
 }
