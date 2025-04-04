@@ -1,4 +1,5 @@
-import Land from "./home/Land";
+import { Floor } from "@/floor/Floor";
+
 
 export default function Home() {
   return (
@@ -9,7 +10,8 @@ export default function Home() {
           Empowering Architects with Cutting-Edge Solutions
         </p>
       </div> */}
-      <Land/>
+
+       <Floor/>
     </>
   );
 }
