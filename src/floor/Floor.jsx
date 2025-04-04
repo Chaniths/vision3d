@@ -52,20 +52,15 @@ export const Floor = () => {
 
                             </div>
 
-                            <div className="flex  mb-16">
-
-                                <div className="w-ful  md:w-1/2">
-                                    <Image
-                                        src="/Floor/image 24.svg"
-                                        alt="3D Floor Plan Example"
-                                        className="rounded-lg w-full h-auto"
-                                        height={250}
-                                        width={150}
-                                    />
-                                </div>
-
+                            <div className="w-ful  md:w-1/2">
+                                <Image
+                                    src="/Floor/image 24.svg"
+                                    alt="3D Floor Plan Example"
+                                    className="rounded-lg w-full h-auto"
+                                    height={450}
+                                    width={350}
+                                />
                             </div>
-
                         </div>
 
                         {/* Steps */}
