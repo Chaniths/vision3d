@@ -2,6 +2,7 @@ import React from "react";
 import Card from "./Card";
 import Hero from "../hero/Hero";
 import FeaturesSection from "./FeaturesSection";
+import TestimonialsSection from "./TestimonialsSection";
 
 const Land = () => {
   return (
@@ -34,6 +35,7 @@ const Land = () => {
         />
       </div>
       <FeaturesSection />
+      <TestimonialsSection />
     </div>
   );
 };
