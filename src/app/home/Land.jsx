@@ -1,11 +1,12 @@
 import React from "react";
 import Card from "./Card";
 import Hero from "../hero/Hero";
+import FeaturesSection from "./FeaturesSection";
 
 const Land = () => {
   return (
     <div>
-      <Hero/>
+      <Hero />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-8">
         <Card
           title="Create a floor plan"
@@ -32,6 +33,7 @@ const Land = () => {
           href="/floor"
         />
       </div>
+      <FeaturesSection />
     </div>
   );
 };
