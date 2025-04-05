@@ -6,7 +6,7 @@ export default function Hero() {
       className="h-screen bg-cover bg-center flex items-center justify-center text-white"
       style={{ backgroundImage: "url('/hero/background.png')" }}
     >
-      <div className="bg-opacity-40 p-6 rounded-lg text-center max-w-2xl mt-[-240]">
+      <div className="bg-opacity-40 rounded-lg text-center max-w-2xl mt-[-200]">
         {/* <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
           Design Your Dream Home
         </h1> */}

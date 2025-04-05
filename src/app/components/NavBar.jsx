@@ -76,7 +76,7 @@ export default function Navbar() {
             Inspiration
           </Link>
           <Link
-            href="/resources"
+            href="/resouces"
             className="text-white font-medium hover:text-blue-200"
           >
             Resources

@@ -9,7 +9,7 @@ const Land = () => {
   return (
     <div>
       <Hero />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 p-8">
         <Card
           title="Create a floor plan"
           imageSrc="/card_images/Architect-pana 1.svg"
