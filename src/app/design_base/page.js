@@ -108,25 +108,25 @@ export default function RoomGenerator() {
       <div className="mb-4 flex space-x-4">
         <button
           onClick={() => handleAddFurniture("chair")}
-          className="bg-blue-500 text-white px-4 py-2 rounded shadow hover:bg-blue-600"
+          className="bg-[#EDE6D4] text px-4 py-2 rounded shadow"
         >
           Add Chair
         </button>
         <button
           onClick={() => handleAddFurniture("bed")}
-          className="bg-green-500 text-white px-4 py-2 rounded shadow hover:bg-green-600"
+          className="bg-[#EDE6D4] text px-4 py-2 rounded shadow"
         >
           Add Bed
         </button>
         <button
           onClick={() => handleAddFurniture("bookshelf")}
-          className="bg-green-500 text-white px-4 py-2 rounded shadow hover:bg-green-600"
+          className="bg-[#EDE6D4] text px-4 py-2 rounded shadow"
         >
           Add BookShelf
         </button>
         <button
           onClick={() => handleAddFurniture("sofa")}
-          className="bg-green-500 text-white px-4 py-2 rounded shadow hover:bg-green-600"
+          className="bg-[#EDE6D4] text px-4 py-2 rounded shadow"
         >
           Add Sofa
         </button>
