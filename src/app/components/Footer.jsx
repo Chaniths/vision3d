@@ -9,8 +9,8 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between md:space-y-0 space-y-6">
           {/* Logo and Tagline */}
           <div className="md:mb-0">
-            <h2 className="text-3xl font-light tracking-widest mb-2">VISION 3D</h2>
-            <p className="text-sm text-gray-300 tracking-wider">Empowering Architects</p>
+            <h2 className=" pt-14 text-7xl font-sans tracking-widest mb-2">VISION 3D</h2>
+            <p className="text-lg text-gray-300 tracking-wider">Empowering Architects</p>
           </div>
 
           {/* Content Links */}
@@ -62,7 +62,9 @@ const Footer = () => {
             {/* Email Us */}
             <div className="mt-6">
               <h3 className="text-sm font-medium mb-3 pb-1 border-b border-[#f45d96] inline-block">Email Us</h3>
-              <p className="text-gray-300 mt-3">chanithwijekoon@gmail.com</p>
+              <Link href="https://mail.google.com/mail/?view=cm&fs=1&to=chanithwijekoon@gmail.com">
+                <p className="text-gray-300 mt-3">chanithwijekoon@gmail.com</p>
+              </Link>
             </div>
           </div>
         </div>
