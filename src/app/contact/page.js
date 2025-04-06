@@ -5,13 +5,13 @@ export default function Contact() {
   return (
     <>
       <div
-        className="min-h-screen flex items-center justify-center bg-cover bg-center"
+        className="min-h-screen flex items-center justify-center bg-cover bg-center "
         style={{
           backgroundImage: 'url("furniturShop/contact-Img.svg")',
         }}
       >
-        <div className="flex flex-col items-center gap-6 m-5">
-          <div className="backdrop-blur-[20px] bg-gray-400 bg-opacity-70 text-white rounded-xl p-10 shadow-2xl max-w-3xl w-full text-center">
+        <div className="flex flex-col items-center gap-6 m-5 ">
+          <div className="backdrop-blur-[20px] bg-gray-400/70 text-white rounded-xl p-10 shadow-2xl max-w-6xl w-full text-center">
             <h3 className="text-2xl font-bold mb-3">About This Page</h3>
             <p className="text-base leading-relaxed">
               At Vision 3D, we envision a world where architectural design is accessible to all, regardless of
@@ -21,7 +21,8 @@ export default function Contact() {
           </div>
 
 
-          <div className="backdrop-blur-lg bg-gray-400 bg-opacity-70 text-white rounded-xl p-10 shadow-2xl max-w-3xl w-full text-center">
+
+          <div className="backdrop-blur-lg bg-gray-400/70 text-white rounded-xl p-10 shadow-2xl max-w-6xl w-full text-center">
             <h3 className="text-2xl font-bold mb-3">Our Story</h3>
             <p className="text-base leading-relaxed">
               Recognizing the challenges many face with intricate design platforms,
@@ -31,7 +32,7 @@ export default function Contact() {
             </p>
           </div>
 
-          <div className="backdrop-blur-lg bg-gray-400 bg-opacity-70 text-white rounded-xl p-10 shadow-2xl max-w-3xl w-full text-center">
+          <div className="backdrop-blur-lg bg-gray-400/70 text-white rounded-xl p-10 shadow-2xl max-w-6xl w-full text-center">
             <h3 className="text-2xl font-bold mb-3">Our Mission</h3>
             <p className="text-base leading-relaxed">
               We are committed to simplifying the design process, enabling professionals and enthusiasts
@@ -41,21 +42,29 @@ export default function Contact() {
             </p>
           </div>
 
-          <div className="backdrop-blur-lg bg-gray-400 bg-opacity-70 text-white rounded-xl p-10 shadow-2xl max-w-3xl w-full text-center">
-            <h3 className="text-2xl font-bold mb-3">Our Values</h3>
-            <p className="text-base leading-relaxed">
-              Innovation: Continuously pushing the boundaries to offer cutting-edge solutions.<br /><br />
+          <div className="backdrop-blur-lg bg-gray-400/70 text-white rounded-xl p-10 shadow-2xl max-w-6xl w-full mx-auto text-center">
+            <h3 className="text-2xl font-bold mb-6">Our Values</h3>
 
-              Accessibility: Ensuring our tools are easy to use for individuals at all skill levels.<br /><br />
-
-              Community: Building a supportive network where ideas and knowledge are freely exchanged.<br /><br />
-
-              Sustainability: Promoting eco-friendly practices within the design community.<br /><br />
-            </p>
+            <div className="flex flex-col items-center space-y-4 text-base leading-relaxed">
+              <p className="max-w-2xl">
+                <span className="font-semibold">Innovation:</span> Continuously pushing the boundaries to offer cutting-edge solutions.
+              </p>
+              <p className="max-w-2xl">
+                <span className="font-semibold">Accessibility:</span> Ensuring our tools are easy to use for individuals at all skill levels.
+              </p>
+              <p className="max-w-2xl">
+                <span className="font-semibold">Community:</span> Building a supportive network where ideas and knowledge are freely exchanged.
+              </p>
+              <p className="max-w-2xl">
+                <span className="font-semibold">Sustainability:</span> Promoting eco-friendly practices within the design community.
+              </p>
+            </div>
           </div>
 
 
-          <div className="backdrop-blur-lg bg-gray-400 bg-opacity-70 text-white rounded-xl p-10 shadow-2xl max-w-3xl w-full text-center">
+
+
+          <div className="backdrop-blur-lg bg-gray-400/70 text-white rounded-xl p-10 shadow-2xl max-w-6xl w-full text-center">
             <h3 className="text-2xl font-bold mb-3">Join Our Journey</h3>
             <p className="text-base leading-relaxed">
               As we continue to grow and evolve, we invite you to be part of our journey.
