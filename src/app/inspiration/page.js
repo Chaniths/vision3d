@@ -37,7 +37,7 @@ export default function ImageFilterGallery() {
           <button
             key={cat}
             onClick={() => setSelected(cat)}
-            className={`px-4 py-2 rounded-full border ${
+            className={`px-4 py-2 rounded-full border cursor-pointer ${
               selected === cat
                 ? "bg-blue-100 text-blue-700 border-blue-400"
                 : "bg-gray-100 text-gray-700 border-gray-300"
