@@ -32,7 +32,7 @@ const Land = () => {
           title="Get inspired"
           imageSrc="/card_images/select house-cuate 1.svg"
           altText="Get inspired"
-          href="/floor"
+          href="/inspiration"
         />
       </div>
       <FeaturesSection />
