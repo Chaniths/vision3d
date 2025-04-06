@@ -65,7 +65,7 @@ export default function RoomGenerator() {
 
   return (
     <div className="flex flex-col items-center p-4">
-      <div className="mb-4 space-x-2">
+      {/* <div className="mb-4 space-x-2">
         <input
           type="number"
           placeholder="Width"
@@ -80,6 +80,29 @@ export default function RoomGenerator() {
           value={length}
           onChange={(e) => setLength(Number(e.target.value))}
         />
+      </div> */}
+
+      <div className="mb-4 space-x-2 flex items-center">
+        <label className="flex items-center space-x-2">
+          <span className="font-medium">Width:</span>
+          <input
+            type="number"
+            placeholder="Width"
+            className="border px-2 py-1 rounded"
+            value={width}
+            onChange={(e) => setWidth(Number(e.target.value))}
+          />
+        </label>
+        <label className="flex items-center space-x-2">
+          <span className="font-medium">Height:</span>
+          <input
+            type="number"
+            placeholder="Length"
+            className="border px-2 py-1 rounded"
+            value={length}
+            onChange={(e) => setLength(Number(e.target.value))}
+          />
+        </label>
       </div>
 
       <div className="mb-4 flex space-x-4">
