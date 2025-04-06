@@ -18,7 +18,7 @@ const Footer = () => {
             <h3 className="text-sm font-medium mb-3 pb-1 border-b border-[#f45d96] inline-block">Content</h3>
             <ul className="space-y-2 mt-3">
               <li><Link href="/" className="text-gray-300 hover:text-white transition">Home</Link></li>
-              <li><Link href="/inspiration" className="text-gray-300 hover:text-white transition">Insperation</Link></li>
+              <li><Link href="/inspiration" className="text-gray-300 hover:text-white transition">Inspiration</Link></li>
               <li><Link href="/resources" className="text-gray-300 hover:text-white transition">Resources</Link></li>
               <li><Link href="/design" className="text-gray-300 hover:text-white transition">Design</Link></li>
               <li><Link href="/contact" className="text-gray-300 hover:text-white transition">Contact Us</Link></li>
