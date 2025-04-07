@@ -8,6 +8,7 @@ import Bed from "./Bed";
 import Sofa from "./Sofa";
 import Table from "./Table";
 import BookShelf from "./BookShelf";
+import SideBar from "./SideBar";
 
 const Room = ({ width, length }) => {
   const wallHeight = 3;
@@ -44,138 +45,73 @@ export default function RoomGenerator() {
   const [length, setLength] = useState(5);
   const [furniture, setFurniture] = useState([]);
 
-  // const handleAddFurniture = (type) => {
-  //   const id = crypto.randomUUID(); // Unique ID
-  //   const defaultPos = [Math.random() * 2 - 1, 0, Math.random() * 2 - 1];
-  //   setFurniture((prev) => [
-  //     ...prev,
-  //     { id, type, position: defaultPos, rotation: [0, 0, 0] },
-  //   ]);
-  // };
-
   const handleAddFurniture = (type) => {
     const id = crypto.randomUUID();
-    const defaultPos = [
-      Math.random() * 4 - 2, // X: -2 to 2
-      0,
-      Math.random() * 4 - 2, // Z: -2 to 2
-    ];
+    const defaultPos = [Math.random() * 4 - 2, 0, Math.random() * 4 - 2];
     setFurniture((prev) => [...prev, { id, type, position: defaultPos }]);
   };
 
   return (
-    <div className="flex flex-col items-center p-4">
-      {/* <div className="mb-4 space-x-2">
-        <input
-          type="number"
-          placeholder="Width"
-          className="border px-2 py-1 rounded"
-          value={width}
-          onChange={(e) => setWidth(Number(e.target.value))}
-        />
-        <input
-          type="number"
-          placeholder="Length"
-          className="border px-2 py-1 rounded"
-          value={length}
-          onChange={(e) => setLength(Number(e.target.value))}
-        />
-      </div> */}
+    <div className="flex h-screen">
+      <SideBar />
+      <div className="flex-1 flex flex-col items-center p-4 overflow-hidden">
+        <div className="w-full h-[500px] bg-gray-200 rounded">
+          <Canvas camera={{ position: [10, 5, 10], fov: 50 }}>
+            <ambientLight intensity={0.5} />
+            <pointLight position={[10, 10, 10]} />
+            <OrbitControls enablePan enableZoom enableRotate />
 
-      <div className="mb-4 space-x-2 flex items-center">
-        <label className="flex items-center space-x-2">
-          <span className="font-medium">Width:</span>
-          <input
-            type="number"
-            placeholder="Width"
-            className="border px-2 py-1 rounded"
-            value={width}
-            onChange={(e) => setWidth(Number(e.target.value))}
-          />
-        </label>
-        <label className="flex items-center space-x-2">
-          <span className="font-medium">Height:</span>
-          <input
-            type="number"
-            placeholder="Length"
-            className="border px-2 py-1 rounded"
-            value={length}
-            onChange={(e) => setLength(Number(e.target.value))}
-          />
-        </label>
-      </div>
+            {furniture.map((item) => (
+              <TransformControls key={item.id} position={item.position}>
+                <group>
+                  {item.type === "chair" && <Chair scale={[3.1, 3.1, 3.1]} />}
+                  {item.type === "bed" && <Bed scale={[3.5, 3.5, 3.5]} />}
+                  {item.type === "bookshelf" && <BookShelf scale={[3, 3, 3]} />}
+                  {item.type === "sofa" && <Sofa scale={[3.5, 3.5, 3.5]} />}
+                </group>
+              </TransformControls>
+            ))}
 
-      <div className="mb-4 flex space-x-4">
-        <button
-          onClick={() => handleAddFurniture("chair")}
-          className="bg-[#EDE6D4] text px-4 py-2 rounded shadow"
-        >
-          Add Chair
-        </button>
-        <button
-          onClick={() => handleAddFurniture("bed")}
-          className="bg-[#EDE6D4] text px-4 py-2 rounded shadow"
-        >
-          Add Bed
-        </button>
-        {/* <button
-          onClick={() => handleAddFurniture("bookshelf")}
-          className="bg-[#EDE6D4] text px-4 py-2 rounded shadow"
-        >
-          Add BookShelf
-        </button> */}
-        <button
-          onClick={() => handleAddFurniture("sofa")}
-          className="bg-[#EDE6D4] text px-4 py-2 rounded shadow"
-        >
-          Add Sofa
-        </button>
-      </div>
+            <Grid
+              position={[0, -0.051, 0]}
+              args={[100, 100]}
+              cellSize={1}
+              cellThickness={0.5}
+              cellColor={"#cccccc"}
+              sectionSize={5}
+              sectionThickness={1}
+              sectionColor={"#999999"}
+              fadeDistance={30}
+              fadeStrength={1}
+              infiniteGrid={true}
+            />
 
-      <div className="w-full h-[500px] bg-gray-200 rounded">
-        <Canvas camera={{ position: [10, 5, 10], fov: 50 }}>
-          <ambientLight intensity={0.5} />
-          <pointLight position={[10, 10, 10]} />
-          <OrbitControls enablePan enableZoom enableRotate />
+            <Room width={width} length={length} />
+          </Canvas>
+        </div>
 
-          {/* {furniture.map((item) => (
-            <TransformControls key={item.id} mode="translate">
-              {item.type === "chair" && (
-                <Chair position={item.position} scale={[3.1, 3.1, 3.1]} />
-              )}
-              {item.type === "bed" && (
-                <Bed position={item.position} scale={[3.5, 3.5, 3.5]} />
-              )}
-            </TransformControls>
-          ))} */}
-
-          {furniture.map((item) => (
-            <TransformControls key={item.id} position={item.position}>
-              <group>
-                {item.type === "chair" && <Chair scale={[3.1, 3.1, 3.1]} />}
-                {item.type === "bed" && <Bed scale={[3.5, 3.5, 3.5]} />}
-                {item.type === "bookshelf" && <BookShelf scale={[3, 3, 3]} />}
-                {item.type === "sofa" && <Sofa scale={[3.5, 3.5, 3.5]} />}
-              </group>
-            </TransformControls>
-          ))}
-
-          <Grid
-            position={[0, -0.051, 0]}
-            args={[100, 100]}
-            cellSize={1}
-            cellThickness={0.5}
-            cellColor={"#cccccc"}
-            sectionSize={5}
-            sectionThickness={1}
-            sectionColor={"#999999"}
-            fadeDistance={30}
-            fadeStrength={1}
-            infiniteGrid={true}
-          />
-
-          <Room width={width} length={length} />
-        </Canvas>
+        <div className="mb-4 space-x-2 flex items-center mt-4">
+          <label className="flex items-center space-x-2">
+            <span className="font-medium">Width:</span>
+            <input
+              type="number"
+              placeholder="Width"
+              className="border px-2 py-1 rounded"
+              value={width}
+              onChange={(e) => setWidth(Number(e.target.value))}
+            />
+          </label>
+          <label className="flex items-center space-x-2">
+            <span className="font-medium">Length:</span>
+            <input
+              type="number"
+              placeholder="Length"
+              className="border px-2 py-1 rounded"
+              value={length}
+              onChange={(e) => setLength(Number(e.target.value))}
+            />
+          </label>
+        </div>
       </div>
     </div>
   );
