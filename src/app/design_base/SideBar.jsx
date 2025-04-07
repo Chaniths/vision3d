@@ -7,7 +7,7 @@ const roomData = {
       { name: "Sofa", image: "/design_base/sofa.jpg" },
       { name: "Chair", image: "/design_base/chair.jpg" },
       { name: "Piano", image: "/design_base/piano.jpg" },
-      { name: "Vas", image: "/design_base/vas.jpg" }
+      { name: "Vas", image: "/design_base/vas.jpg" },
     ],
     image: "/design_base/livingroom.svg",
   },
@@ -15,7 +15,7 @@ const roomData = {
     items: [
       { name: "Bed", image: "/design_base/bed.jpg" },
       { name: "Lamp", image: "/design_base/lamp.jpg" },
-      { name: "Wardrobe", image: "/design_base/wardrobe.jpg" }
+      { name: "Wardrobe", image: "/design_base/wardrobe.jpg" },
     ],
     image: "/design_base/bedroom.svg",
   },
@@ -24,7 +24,7 @@ const roomData = {
       { name: "Table", image: "/design_base/table.jpg" },
       { name: "Cabinet", image: "/design_base/cabinet.png" },
       { name: "Fridge", image: "/design_base/fridge.png" },
-      { name: "Sink", image: "/design_base/sink.jpg" }
+      { name: "Sink", image: "/design_base/sink.jpg" },
     ],
     image: "/design_base/kitchen.svg",
   },
@@ -42,10 +42,11 @@ export default function SideBar({ onAddFurniture }) {
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`flex-1 p-3 font-semibold border-b-2 ${activeTab === tab
-              ? "border-green-500 text-green-600"
-              : "border-transparent text-gray-600"
-              }`}
+            className={`flex-1 p-3 font-semibold border-b-2 ${
+              activeTab === tab
+                ? "border-green-500 text-green-600"
+                : "border-transparent text-gray-600"
+            }`}
           >
             {tab}
           </button>
@@ -59,8 +60,9 @@ export default function SideBar({ onAddFurniture }) {
             <div
               key={room}
               onClick={() => setSelectedRoom(room)}
-              className={`cursor-pointer border rounded-md p-2 text-center hover:bg-green-50 ${selectedRoom === room ? "bg-green-100" : ""
-                }`}
+              className={`cursor-pointer border rounded-md p-2 text-center hover:bg-green-50 ${
+                selectedRoom === room ? "bg-green-100" : ""
+              }`}
             >
               <img
                 src={image}

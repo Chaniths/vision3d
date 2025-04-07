@@ -8,11 +8,8 @@ export default function Hero() {
       style={{ backgroundImage: "url('/hero/background.png')" }}
     >
       <div className="bg-opacity-40 rounded-lg text-center max-w-2xl mt-[-200]">
-        {/* <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-          Design Your Dream Home
-        </h1> */}
         <Image
-          src="/hero/Design Your Dream Home.svg" // Replace with your actual image path
+          src="/hero/Design Your Dream Home.svg"
           alt="Design Your Dream Home"
           width={700}
           height={450}
