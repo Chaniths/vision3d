@@ -118,12 +118,12 @@ export default function RoomGenerator() {
         >
           Add Bed
         </button>
-        <button
+        {/* <button
           onClick={() => handleAddFurniture("bookshelf")}
           className="bg-[#EDE6D4] text px-4 py-2 rounded shadow"
         >
           Add BookShelf
-        </button>
+        </button> */}
         <button
           onClick={() => handleAddFurniture("sofa")}
           className="bg-[#EDE6D4] text px-4 py-2 rounded shadow"
