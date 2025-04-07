@@ -58,7 +58,7 @@ export default function RoomGenerator() {
   };
 
   return (
-    <div className="flex h-screen">
+    <div className="flex h-screen mt-12">
       <SideBar onAddFurniture={handleAddFurniture} />
       <div className="flex-1 flex flex-col items-center p-4 overflow-hidden">
         <div className="w-full h-[500px] bg-gray-200 rounded">
