@@ -6,13 +6,19 @@ import { OrbitControls, Grid, TransformControls } from "@react-three/drei";
 import Chair from "./Chair";
 import Bed from "./Bed";
 import Sofa from "./Sofa";
+import Piano from "./Piano";
+import Vas from "./Vas";
+import Fridge from "./Fridge";
+import Cabinet from "./Cabinet";
+import Lamp from "./Lamp";
 import Table from "./Table";
-import BookShelf from "./BookShelf";
+import Sink from "./Sink";
+import Wardrobe from "./Wardrobe";
 import SideBar from "./SideBar";
 
 const Room = ({ width, length }) => {
-  const wallHeight = 3;
-  const wallThickness = 0.1;
+  const wallHeight = 4;
+  const wallThickness = 0.2;
 
   return (
     <group>
@@ -41,8 +47,8 @@ const Room = ({ width, length }) => {
 };
 
 export default function RoomGenerator() {
-  const [width, setWidth] = useState(5);
-  const [length, setLength] = useState(5);
+  const [width, setWidth] = useState(6);
+  const [length, setLength] = useState(6);
   const [furniture, setFurniture] = useState([]);
 
   const handleAddFurniture = (type) => {
@@ -52,8 +58,8 @@ export default function RoomGenerator() {
   };
 
   return (
-    <div className="flex h-screen pt-18">
-      <SideBar />
+    <div className="flex h-screen">
+      <SideBar onAddFurniture={handleAddFurniture} />
       <div className="flex-1 flex flex-col items-center p-4 overflow-hidden">
         <div className="w-full h-[500px] bg-gray-200 rounded">
           <Canvas camera={{ position: [10, 5, 10], fov: 50 }}>
@@ -66,8 +72,15 @@ export default function RoomGenerator() {
                 <group>
                   {item.type === "chair" && <Chair scale={[3.1, 3.1, 3.1]} />}
                   {item.type === "bed" && <Bed scale={[3.5, 3.5, 3.5]} />}
-                  {item.type === "bookshelf" && <BookShelf scale={[3, 3, 3]} />}
+                  {item.type === "piano" && <Piano scale={[2.5, 2.5, 2.5]} />}
                   {item.type === "sofa" && <Sofa scale={[3.5, 3.5, 3.5]} />}
+                  {item.type === "vas" && <Vas scale={[1.5, 1.5, 1.5]} />}
+                  {item.type === "fridge" && <Fridge scale={[0.05, 0.05, 0.05]} />}
+                  {item.type === "cabinet" && <Cabinet scale={[2, 2, 2]} />}
+                  {item.type === "lamp" && <Lamp scale={[2, 2, 2]} />}
+                  {item.type === "sink" && <Sink scale={[2, 2, 2]} />}
+                  {item.type === "wardrobe" && <Wardrobe scale={[0.4, 0.4, 0.4]} />}
+                  {item.type === "table" && <Table scale={[3, 3, 3]} />}
                 </group>
               </TransformControls>
             ))}
