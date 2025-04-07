@@ -98,40 +98,19 @@ export default function Navbar() {
         {/* Right side icons */}
         <div className="flex items-center space-x-4">
           {/* Message icon */}
-          <button className="text-white p-2 rounded-full hover:bg-blue-900">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
-              />
-            </svg>
-          </button>
+          <Link href='/auth/login'>
+            <button className="text-white p-2 rounded-full hover:bg-blue-900">
+              Sign In
+            </button>
+          </Link>
 
           {/* Search icon */}
-          <button className="text-white p-2 rounded-full hover:bg-blue-900">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
+          <Link href="/auth/signup">
+          <button className="text-gray-600 p-2 rounded-full hover:bg-blue-900 hover:text-white  bg-[#EDE6D4] ">
+            Sign Up
           </button>
+          
+          </Link>
 
           {/* Mobile menu button */}
           <button
