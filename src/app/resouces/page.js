@@ -48,7 +48,7 @@ export default function Resources() {
 
     return (
         <>
-            <div className="ml-[150px]">
+            <div className="ml-[30px]">
                 <p className="text-3xl font-bold p-4 m-4">
                     Resources & Support
                 </p>

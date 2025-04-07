@@ -55,7 +55,7 @@ export default function Navbar() {
 
       {/* Main navbar */}
       <nav className="bg-[#0A1930] text-white px-5 py-4 flex justify-between items-center">
-        <Link href="/" className="text-2xl font-bold">
+        <Link href="/home" className="text-2xl font-bold">
           <Image
             src="/Vision3D_Logo.svg"
             alt="Vision3D Logo"
@@ -66,7 +66,7 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-25 ml-[-250]">
-          <Link href="/" className="text-white font-medium hover:text-blue-200">
+          <Link href="/home" className="text-white font-medium hover:text-blue-200">
             Home
           </Link>
           <Link

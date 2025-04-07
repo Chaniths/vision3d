@@ -1,4 +1,3 @@
-import Layout from "./components/Layout";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -12,8 +11,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Layout>{children}</Layout>
+      <body className={`${inter.className} bg-white text-gray-900`}>
+       {children}{/* Ensure this is the overall root layout wrapper */}
       </body>
     </html>
   );
