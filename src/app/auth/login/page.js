@@ -1,11 +1,11 @@
 "use client";
 
-import Link from 'next/link'
-import Image from 'next/image'
-import { useState } from 'react'
+import Link from "next/link";
+import Image from "next/image";
+import { useState } from "react";
 
-export default function SignUp() {
-    const [showPassword, setShowPassword] = useState(false);
+export default function Login() {
+  const [showPassword, setShowPassword] = useState(false);
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
@@ -101,10 +101,10 @@ export default function SignUp() {
                         Sign Up
                     </button>
 
-                    {/* Social Login Divider */}
-                    <div className="flex items-center justify-center my-4">
-                        <span className="text-sm text-gray-300">or continue with</span>
-                    </div>
+          {/* Social Login Divider */}
+          <div className="flex items-center justify-center my-4">
+            <span className="text-sm text-gray-300">or continue with</span>
+          </div>
 
                     {/* Social Login Buttons */}
                     <div className="flex justify-center space-x-4">
@@ -174,3 +174,4 @@ export default function SignUp() {
         </div>
     );
 }
+

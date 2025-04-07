@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -22,9 +23,11 @@ export default function Hero() {
           in one home design platform. Visualize your ideas with precision and
           high quality 4K renders quick, simple, and professional.
         </p>
-        <button className="bg-[#0a1929] hover:bg-blue-800 text-white font-semibold py-2 px-6 rounded-full transition duration-300 cursor-pointer">
-          Get Started
-        </button>
+        <Link href={"/design"}>
+          <button className="bg-[#0a1929] hover:bg-blue-800 text-white font-semibold px-10 py-4 rounded-full text-base shadow-md transition duration-300 ease-in-out cursor-pointer">
+            Get Started
+          </button>
+        </Link>
       </div>
     </div>
   );
