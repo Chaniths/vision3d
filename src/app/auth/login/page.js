@@ -5,7 +5,8 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function Login() {
-  const [showPassword, setShowPassword] = useState(false);
+    const [showPassword, setShowPassword] = useState(false);
+    const [touched, setTouched] = useState({ email: false, password: false });
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
@@ -24,6 +25,11 @@ export default function Login() {
             ...prev,
             [id]: value
         }));
+    };
+
+    const handleBlur = (e) => {
+        const { id } = e.target;
+        setTouched((prev) => ({ ...prev, [id]: true }));
     };
 
     const saveUser = () => {
@@ -55,10 +61,14 @@ export default function Login() {
                             type="email"
                             id="email"
                             placeholder="username@gmail.com"
-                            className="w-full px-3 py-2 border roundedd"
+                            className={`w-full px-3 py-2 border ${touched.email && !formData.email ? 'border-red-500' : 'border-gray-300'} rounded`}
                             value={formData.email}
                             onChange={handleChange}
+                            onBlur={handleBlur}
                         />
+                        {touched.email && !formData.email && (
+                            <p className="text-red-500 text-sm mt-1">Email is required</p>
+                        )}
                     </div>
 
                     {/* Password Input */}
@@ -71,6 +81,7 @@ export default function Login() {
                                 placeholder="Password"
                                 value={formData.password}
                                 className="w-full px-3 py-2 border rounded"
+                                onBlur={handleBlur}
                                 onChange={handleChange}
                             />
                             <button
@@ -91,20 +102,31 @@ export default function Login() {
                                 )}
                             </button>
                         </div>
+                        {touched.password && !formData.password && (
+                            <p className="text-red-500 text-sm mt-1">Password is required</p>
+                        )}
                     </div>
 
                     {/* Sign In Button */}
-                    <button
-                        onClick={saveUser}
-                        className="w-full bg-blue-800 hover:bg-blue-700 text-white font-medium py-2 rounded-md transition duration-200 mb-4 mt-6"
-                    >
-                        Sign Up
-                    </button>
+                    <Link href="/design_base">
+                        <button
+                            onClick={saveUser}
+                            disabled={!formData.email || !formData.password}
+                            className={`w-full py-2 mt-6 rounded ${!formData.email || !formData.password
+                                    ? 'bg-gray-400 cursor-not-allowed'
+                                    : 'bg-[#0A1930] hover:bg-blue-700 text-white'
+                                }`}
+                        >
+                            Login
+                        </button>
 
-          {/* Social Login Divider */}
-          <div className="flex items-center justify-center my-4">
-            <span className="text-sm text-gray-300">or continue with</span>
-          </div>
+                    </Link>
+
+
+                    {/* Social Login Divider */}
+                    <div className="flex items-center justify-center my-4">
+                        <span className="text-sm text-gray-300">or continue with</span>
+                    </div>
 
                     {/* Social Login Buttons */}
                     <div className="flex justify-center space-x-4">

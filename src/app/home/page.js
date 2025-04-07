@@ -26,13 +26,13 @@ const Land = () => {
           title="Furnish and decorate"
           imageSrc="/card_images/House restyling-cuate 1.svg"
           altText="Furnish"
-          href="/floor"
+          href="/furniture_shop"
         />
         <Card
           title="Get inspired"
           imageSrc="/card_images/select house-cuate 1.svg"
           altText="Get inspired"
-          href="/floor"
+          href="/inspiration"
         />
       </div>
       <FeaturesSection />

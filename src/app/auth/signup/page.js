@@ -151,12 +151,14 @@ export default function SignUp() {
                         )}
                     </div>
 
-                    <button
+                   <Link href="/design_base">
+                   <button
                         onClick={saveUser}
-                        className="w-full py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                        className="w-full py-2 bg-[#0A1930] text-white rounded hover:bg-blue-700"
                     >
-                        Register
-                    </button>
+                        Sign UP
+                    </button>                
+                   </Link>
 
                     {successMessage && (
                         <p className="text-green-600 mt-3 text-sm">{successMessage}</p>

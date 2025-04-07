@@ -9,7 +9,7 @@ const Navbar = () => {
     const [viewMode, setViewMode] = useState('2D');
 
     return (
-        <nav className="w-full bg-[#0A1930] text-white flex items-center px-6 py-3 fixed top-0 left-0 right-0 z-50">
+        <nav className="w-full bg-[#0A1930] text-white flex items-center px-6 py-3 fixed top-0 left-0 right-0 z-50 mb-20">
             {/* Left section with logo and main navigation */}
             <div className="flex items-center space-x-8">
                 {/* Logo */}
