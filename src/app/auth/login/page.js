@@ -37,7 +37,6 @@ export default function Login() {
       ...prevUsers,
       { username: formData.email, password: formData.password },
     ]);
-    setFormData({ email: "", password: "" }); // clear fields after saving
   };
 
   return (
