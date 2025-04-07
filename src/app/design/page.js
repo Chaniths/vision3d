@@ -1,11 +1,14 @@
-import React from 'react';
-import DesignSideBar from './DesignSideBar';
-import DesignSearchBar from './DesignSearchBar';
-import DesignCard from './DesignCard';
+import React from "react";
+import DesignSideBar from "./DesignSideBar";
+import DesignSearchBar from "./DesignSearchBar";
+import DesignCard from "./DesignCard";
 
 const projectImages = [
-  '/design_pages_images/image.svg', '/design_pages_images/image (1).svg', '/design_pages_images/image (2).svg',
-  '/design_pages_images/image (3).svg', '/design_pages_images/image (4).svg'
+  "/design_pages_images/image.svg",
+  "/design_pages_images/image (1).svg",
+  "/design_pages_images/image (2).svg",
+  "/design_pages_images/image (3).svg",
+  "/design_pages_images/image (4).svg",
 ];
 
 export default function page() {

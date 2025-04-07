@@ -9,10 +9,15 @@ const data = [
   { id: 5, category: "Living Room", src: "/inspiration/tempImagekKUZOx.svg" },
   { id: 6, category: "Bedroom", src: "/inspiration/tempImagen0GpSg.svg" },
   { id: 7, category: "Kitchen", src: "/inspiration/tempImageqxLQgE.svg" },
-  // Add more images as needed
 ];
 
-const categories = ["All rooms", "Living Room", "Kitchen", "Bedroom", "Bathroom"];
+const categories = [
+  "All rooms",
+  "Living Room",
+  "Kitchen",
+  "Bedroom",
+  "Bathroom",
+];
 
 export default function ImageFilterGallery() {
   const [selected, setSelected] = useState("All rooms");

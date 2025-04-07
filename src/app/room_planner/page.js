@@ -5,8 +5,9 @@ export default function RoomPlanner() {
   return (
     <div className="flex justify-center min-h-screen bg-gray-50">
       <div className="w-full max-w-6xl px-4 py-8">
-      <h2 className="text-gray-800 font-bold text-2xl mb-6">Home ➡️ Design your room</h2>
-
+        <h2 className="text-gray-800 font-bold text-2xl mb-6">
+          Home ➡️ Design your room
+        </h2>
 
         <div className="text-center">
           <h2 className="text-3xl font-semibold text-gray-800 mb-8">
