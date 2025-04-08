@@ -2,6 +2,7 @@ import React from "react";
 import Tutorial from "./tutorial";
 import Image from "next/image";
 import ForumPost from "./forum";
+import Link from "next/link";
 
 export default function Resources() {
   const posts = [
@@ -61,33 +62,43 @@ export default function Resources() {
         <p className="text-3xl font-bold p-4 m-4">📚 Tutorials</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6  items-center justify-center pl-32">
-          <Tutorial
-            imageSrc="/resources/Teacher student.png"
-            altText="Beginner Guide"
-            title="Beginner Guide"
-            desc="Learn the basics of creating a home in 3D"
-          />
+          <Link href={"https://www.youtube.com/watch?v=367qjBKK0A8"}>
+            <Tutorial
+              imageSrc="/resources/Teacher student.png"
+              altText="Beginner Guide"
+              title="Beginner Guide"
+              desc="Learn the basics of creating a home in 3D"
+            />
+          </Link>
 
-          <Tutorial
-            imageSrc="/resources/Learning.png"
-            altText="Advanced Tips"
-            title="Advanced Tips"
-            desc="Master lighting, materials, and model optimization"
-          />
+          <Link href={"https://www.adobe.com/products/substance3d/tutorials.html"}>
+            <Tutorial
+              imageSrc="/resources/Learning.png"
+              altText="Advanced Tips"
+              title="Advanced Tips"
+              desc="Master lighting, materials, and model optimization"
+            />
+          </Link>
 
-          <Tutorial
-            imageSrc="/resources/Video tutorial.png"
-            altText="Video Tutorials"
-            title="Video Tutorials"
-            desc="Watch hands-on lessons to improve your skills"
-          />
 
-          <Tutorial
-            imageSrc="/resources/House searching.png"
-            altText="Quick Start Guide"
-            title="Quick Start Guide"
-            desc="A simple introduction to essential tools and features"
-          />
+          <Link href={"https://www.youtube.com/playlist?list=PL8U26D-Xj2GY08YujN0tYGbXVgrfDqtXa"}>
+            <Tutorial
+              imageSrc="/resources/Video tutorial.png"
+              altText="Video Tutorials"
+              title="Video Tutorials"
+              desc="Watch hands-on lessons to improve your skills"
+            />
+          </Link>
+
+          <Link href={"https://www.linkedin.com/posts/chanith-wijekoon-16750b2a2_devthon2-sltcleos-uomleos-activity-7315283453350924288-2MhT?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEkL5x8Boc_eESn0x30PI6eALupg-fupaIo"}>
+            <Tutorial
+              imageSrc="/resources/House searching.png"
+              altText="Quick Start Guide"
+              title="Quick Start Guide"
+              desc="A simple introduction to essential tools and features"
+            />
+          </Link>
+
         </div>
 
         <p className="text-3xl font-bold p-4 m-4">❓ FAQs</p>
