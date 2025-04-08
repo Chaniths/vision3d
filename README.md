@@ -1,5 +1,6 @@
 # VISION 3D
 
+![Image](https://github.com/user-attachments/assets/cbeeb936-e3e4-4f63-98ab-c5f4d4de5b48)
 
 ## 🧭 Overview
 
@@ -46,4 +47,15 @@ cd vision3d
 npm install
 
 # Start the development server
-npm run dev  
+npm run dev
+
+
+
+```
+## 👥 Team Members
+
+🧑‍💻 *Chanith Wijekoon*  
+👨‍💻 *Thisuka Warsavithane*  
+👩‍💻 *Ayshcharya Dewduni*  
+👩‍💻 *Tharuki Vinodya*  
+🧑‍💻 *Kavinu Saputhanthri*
