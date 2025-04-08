@@ -1,19 +1,19 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState,useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Grid, TransformControls } from "@react-three/drei";
-import Chair from "./Chair";
-import Bed from "./Bed";
-import Sofa from "./Sofa";
-import Piano from "./Piano";
-import Vas from "./Vas";
-import Fridge from "./Fridge";
-import Cabinet from "./Cabinet";
-import Lamp from "./Lamp";
-import Table from "./Table";
-import Sink from "./Sink";
-import Wardrobe from "./Wardrobe";
+import Chair from "./components/Chair";
+import Bed from "./components/Bed";
+import Sofa from "./components/Sofa";
+import Piano from "./components/Piano";
+import Vas from "./components/Vas";
+import Fridge from "./components/Fridge";
+import Cabinet from "./components/Cabinet";
+import Lamp from "./components/Lamp";
+import Table from "./components/Table";
+import Sink from "./components/Sink";
+import Wardrobe from "./components/Wardrobe";
 import SideBar from "./SideBar";
 
 const Room = ({ width, length }) => {
@@ -21,7 +21,18 @@ const Room = ({ width, length }) => {
   const wallThickness = 0.2;
 
   return (
-    <group>
+
+    <group name="room">
+      <mesh
+        name="floor"
+        rotation={[-Math.PI / 2, 0, 0]}
+        position={[0, -0.05, 0]}
+        onPointerDown={(e) => e.stopPropagation()}
+      >
+        <planeGeometry args={[width, length]} />
+        <meshStandardMaterial color="#c9b8a7" />
+      </mesh>
+
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.05, 0]}>
         <planeGeometry args={[width, length]} />
         <meshStandardMaterial color="#c9b8a7" />
@@ -50,6 +61,8 @@ export default function RoomGenerator() {
   const [width, setWidth] = useState(6);
   const [length, setLength] = useState(6);
   const [furniture, setFurniture] = useState([]);
+  const [selected, setSelected] = useState(null);
+  const orbitControlsRef = useRef();
 
   const handleAddFurniture = (type) => {
     const id = crypto.randomUUID();
@@ -57,15 +70,20 @@ export default function RoomGenerator() {
     setFurniture((prev) => [...prev, { id, type, position: defaultPos }]);
   };
 
+  const handleCanvasClick = () => {
+    // Unselect if clicked elsewhere
+    setSelected(null);
+  };
+
   return (
     <div className="flex h-screen mt-12">
       <SideBar onAddFurniture={handleAddFurniture} />
       <div className="flex-1 flex flex-col items-center p-4 overflow-hidden">
         <div className="w-full h-[500px] bg-gray-200 rounded">
-          <Canvas camera={{ position: [10, 5, 10], fov: 50 }}>
+          <Canvas camera={{ position: [10, 5, 10], fov: 50 }} onPointerMissed={handleCanvasClick}>
             <ambientLight intensity={0.5} />
             <pointLight position={[10, 10, 10]} />
-            <OrbitControls enablePan enableZoom enableRotate />
+            <OrbitControls enablePan={!selected} enableZoom={!selected} enableRotate={!selected} ref={orbitControlsRef} />
 
             {/* Orbit only in 3D */}
             {/* {viewMode === "3D" && (
@@ -73,7 +91,10 @@ export default function RoomGenerator() {
             )} */}
 
             {furniture.map((item) => (
-              <TransformControls key={item.id} position={item.position}>
+              <TransformControls key={item.id} position={item.position} onPointerDown={(e) => {
+                e.stopPropagation();
+                setSelected(item.id);
+              }}>
                 <group>
                   {item.type === "chair" && <Chair scale={[3.1, 3.1, 3.1]} />}
                   {item.type === "bed" && <Bed scale={[3.5, 3.5, 3.5]} />}
