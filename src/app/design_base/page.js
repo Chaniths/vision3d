@@ -67,6 +67,11 @@ export default function RoomGenerator() {
             <pointLight position={[10, 10, 10]} />
             <OrbitControls enablePan enableZoom enableRotate />
 
+            {/* Orbit only in 3D */}
+            {/* {viewMode === "3D" && (
+              <OrbitControls enablePan enableZoom enableRotate />
+            )} */}
+
             {furniture.map((item) => (
               <TransformControls key={item.id} position={item.position}>
                 <group>
