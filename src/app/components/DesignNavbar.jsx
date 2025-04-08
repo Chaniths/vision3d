@@ -26,7 +26,7 @@ const Navbar = () => {
 
         {/* Main navigation items */}
         <Link
-          href="/projects"
+          href="/design"
           className="text-white font-medium hover:text-gray-300"
         >
           All projects
