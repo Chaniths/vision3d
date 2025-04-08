@@ -110,6 +110,24 @@ const Navbar = () => {
             className={`px-6 py-1 rounded-lg text-sm transition-colors ${
               viewMode === "2D" ? "bg-white text-[#0A1930]" : "text-gray-300"
             }`}
+            onClick={() => setViewMode("3D")}
+          >
+            3D
+          </button>
+          <button
+            className={`px-6 py-1 rounded-lg text-sm transition-colors ${
+              viewMode === "3D" ? "bg-gray-200 text-[#0A1930]" : "text-gray-300"
+            }`}
+            onClick={() => setViewMode("2D")}
+          >
+            2D
+          </button>
+        </div>
+        {/* <div className="bg-gray-700 rounded-lg inline-flex">
+          <button
+            className={`px-6 py-1 rounded-lg text-sm transition-colors ${
+              viewMode === "2D" ? "bg-white text-[#0A1930]" : "text-gray-300"
+            }`}
             onClick={() => setViewMode("2D")}
           >
             2D
@@ -122,7 +140,7 @@ const Navbar = () => {
           >
             3D
           </button>
-        </div>
+        </div> */}
       </div>
 
       {/* Right section with utility icons */}

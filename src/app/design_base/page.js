@@ -67,6 +67,11 @@ export default function RoomGenerator() {
             <pointLight position={[10, 10, 10]} />
             <OrbitControls enablePan enableZoom enableRotate />
 
+            {/* Orbit only in 3D */}
+            {/* {viewMode === "3D" && (
+              <OrbitControls enablePan enableZoom enableRotate />
+            )} */}
+
             {furniture.map((item) => (
               <TransformControls key={item.id} position={item.position}>
                 <group>
@@ -74,12 +79,12 @@ export default function RoomGenerator() {
                   {item.type === "bed" && <Bed scale={[3.5, 3.5, 3.5]} />}
                   {item.type === "piano" && <Piano scale={[2.5, 2.5, 2.5]} />}
                   {item.type === "sofa" && <Sofa scale={[3.5, 3.5, 3.5]} />}
-                  {item.type === "vas" && <Vas scale={[1.5, 1.5, 1.5]} />}
+                  {item.type === "vas" && <Vas scale={[1.8, 1.8, 1.8]} />}
                   {item.type === "fridge" && (
                     <Fridge scale={[0.05, 0.05, 0.05]} />
                   )}
                   {item.type === "cabinet" && <Cabinet scale={[2, 2, 2]} />}
-                  {item.type === "lamp" && <Lamp scale={[2, 2, 2]} />}
+                  {item.type === "lamp" && <Lamp scale={[1.5, 1.5, 1.5]} />}
                   {item.type === "sink" && <Sink scale={[2, 2, 2]} />}
                   {item.type === "wardrobe" && (
                     <Wardrobe scale={[0.4, 0.4, 0.4]} />
