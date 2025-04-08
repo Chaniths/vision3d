@@ -37,7 +37,7 @@
 
 ```bash
 # Clone the repository
-git clone <repository link>
+git clone https://github.com/Chaniths/vision3d.git
 
 # Navigate to the project directory
 cd vision3d
